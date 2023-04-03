@@ -7,7 +7,7 @@ body, html {
  * Off Canvas sidebar at medium breakpoint
  * --------------------------------------------------
  */
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
 
   .row-offcanvas {
     position: relative;
@@ -39,7 +39,7 @@ body, html {
  * Off Canvas wider at sm breakpoint
  * --------------------------------------------------
  */
-@media screen and (max-width: 34em) {
+/* @media screen and (max-width: 34em) {
   .row-offcanvas-left
   .sidebar-offcanvas {
     left: -45%;
@@ -78,7 +78,7 @@ body, html {
     -o-transform: rotate(-44deg);
     -ms-transform: rotate(-44deg);
     transform: rotate(-44deg);
-}
+}  */
 
 /* .overflow-auto::-webkit-scrollbar{
   display: none;

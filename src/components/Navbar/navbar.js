@@ -1,13 +1,19 @@
 import React from 'react'
 import {BsGlobe} from 'react-icons/bs'
 import {MdOutlineDateRange} from 'react-icons/md'
+import { useSearchParams } from 'react-router-dom'
 
-const navbar = () => {
+const Navbar = () => {
+    const  [searchParams,setSearchParams] = useSearchParams();
+    const handleSearch =(e)=>{
+        
+    }
+
     return (
         <>
             <nav className="navbar navbar-light" style={{background:"black"}}>
                 <div className="container-fluid">
-                    <form className="d-flex">
+                    <form className="d-flex" onSubmit={handleSearch}>
                         <div className="dropdown">
                             <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                 <BsGlobe size={25} style={{paddingBottom:"2px",paddingRight:"5px"}}/>UNI
@@ -21,7 +27,8 @@ const navbar = () => {
                             </ul>
                         </div>
 
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearchParams({name:e.target.value})}} />
+                        <button className="btn btn-outline-success" type="submit">Search</button>
 
                         <div className="dropdown">
                             <button className="btn btn-secondary dropdown-toggle" style={{borderRadius:"0px"}} type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,7 +55,7 @@ const navbar = () => {
                             </ul>
                         </div>
 
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        
                         <button type="button" className="btn btn-outline-success">Primary</button>
                     </form>
                 </div>
@@ -57,4 +64,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default Navbar
