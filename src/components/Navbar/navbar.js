@@ -1,10 +1,25 @@
 import React from 'react'
 import {BsGlobe} from 'react-icons/bs'
 import {MdOutlineDateRange} from 'react-icons/md'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import {useDispatch,useSelector} from "react-redux"
+import { logoutInitiate } from '../../redux/action'
 
 const Navbar = () => {
+
     const  [searchParams,setSearchParams] = useSearchParams();
+    const {currentUser} = useSelector((state)=>state.user)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleAuth =()=>{
+        if(currentUser){
+            dispatch(logoutInitiate());
+        }
+        localStorage.clear();
+    }
+    const handleRoute=()=>{
+        navigate('/signup');
+    }
     const handleSearch =(e)=>{
         
     }
@@ -54,9 +69,10 @@ const Navbar = () => {
                                 <li><a className="dropdown-item" href="#">Separated link</a></li>
                             </ul>
                         </div>
-
-                        
-                        <button type="button" className="btn btn-outline-success">Primary</button>
+                        {
+                            currentUser ? <button type="button" className="btn btn-outline-success" onClick={handleAuth}>Logout</button> :
+                            <button type="button" className="btn btn-outline-success" onClick={handleRoute}>Signup</button>
+                        }
                     </form>
                 </div>
             </nav>

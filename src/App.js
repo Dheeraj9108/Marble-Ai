@@ -15,8 +15,24 @@ import { useEffect } from 'react';
 import Temp from "./components/Temp/Temp";
 
 import ReactGA from "react-ga"
+import Signin from './components/Signup/Signin';
+
+import { useSelector,useDispatch } from 'react-redux';
+import { setUser } from './redux/action';
+import { auth } from './components/Signup/config';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    auth.onAuthStateChanged((authUser) => {
+      if(authUser){
+        dispatch(setUser(authUser))
+      }else{
+        dispatch(setUser(null))
+      }
+    })
+  },[])
+  const {currentUser} = useSelector((state)=> state.user)
   useEffect(()=>{
     ReactGA.initialize('UA-260450577-1');
 
@@ -25,11 +41,12 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Sidebar/> */}
         <Routes>
           <Route exact path="/" element={<Home />}>
           </Route>
-          <Route path="/signup" element={<Signup />}>
+          <Route path="/signup"  element={<Signup />}>
+          </Route>
+          <Route path="/signin" element={<Signin />}>
           </Route>
           <Route path="/temp" element={<Temp />}>
           </Route>

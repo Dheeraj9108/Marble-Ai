@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getAuth,GoogleAuthProvider} from'firebase/auth'
+import {getAuth,GoogleAuthProvider,FacebookAuthProvider} from'firebase/auth'
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -24,4 +24,5 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const analytics = getAnalytics(app);
 const provider = new GoogleAuthProvider();
-export {auth,provider,analytics};
+const fprovider = new FacebookAuthProvider();
+export {auth,provider,analytics,fprovider};
