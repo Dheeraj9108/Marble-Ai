@@ -50,6 +50,28 @@ export const setUser=(user)=>({
     payload:user,
 })
 
+const setLan=(lang)=>({
+    type:types.SET_LAN,
+    payload:lang,
+})
+
+export const setLanguage=(lang)=>{
+    return function(dispatch){
+        dispatch(setLan(lang));
+    }
+}
+
+const setSTitle=(title)=>({
+    type:types.SET_SEARCH_TITLE,
+    payload:title,
+})
+
+export const setSrchTitle=(title)=>{
+    return function(dispatch){
+        dispatch(setSTitle(title));
+    }
+}
+
 export const registerInitiate =(email,password,displayName)=>{
     return function (dispatch){
         dispatch(registerStart());

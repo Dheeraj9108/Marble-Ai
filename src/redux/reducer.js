@@ -6,6 +6,8 @@ const initializeState = {
     error:null,
 }
 
+
+
 const useReducer = (state=initializeState,action)=>{
     switch(action.type){
         case types.REGISTER_START:
@@ -45,5 +47,6 @@ const useReducer = (state=initializeState,action)=>{
             return state;
     }
 }
+
 
 export default useReducer;

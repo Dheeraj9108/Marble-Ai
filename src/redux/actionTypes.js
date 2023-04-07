@@ -11,3 +11,7 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS"
 export const LOGOUT_FAIL = "LOGOUT_FAIL"
 
 export const SET_USER = "SET_USER"
+
+export const SET_LAN = "SET_LAN"
+
+export const SET_SEARCH_TITLE = "SET_SEARCH_TITLE"

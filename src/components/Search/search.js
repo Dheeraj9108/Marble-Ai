@@ -2,11 +2,13 @@ import React, { useState, useEffect, useRef } from 'react'
 import "./style.css"
 import Main from '../Main/Main'
 import Sidebarleft from '../SidebarLeft/Sidebarleft'
+import { useSelector } from 'react-redux'
 
 const Search = () => {
     const [cardData, setCardData] = useState([]);
     const [page, setPage] = useState(1);
     const scrollDiv = useRef();
+    const {title} = useSelector((state)=>state.searchred)
     const getCardData = async () => {
         const res = await fetch(
             `https://jsonplaceholder.typicode.com/posts?_limit=9&_page=${page}`
