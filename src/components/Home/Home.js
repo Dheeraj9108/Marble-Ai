@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/navbar'
-import Search from '../Search/Search'
+import Search from '../Search/search.js'
+
 import Button from '../Buttons/btns.js'
 // import Temp from '../Temp/Temp'
 // import Sidebar from '../Sidebar/sidebar'

@@ -11,7 +11,7 @@ const Search = () => {
     const {title} = useSelector((state)=>state.searchred)
     const getCardData = async () => {
         const res = await fetch(
-            `https://jsonplaceholder.typicode.com/posts?_limit=9&_page=${page}`
+            `https://shreyas186.github.io/SampleApi/db.json`
         );
 
         const data = await res.json();
