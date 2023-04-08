@@ -25,9 +25,9 @@ const Btns = () => {
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <button type="button" className="btn btn-secondary" value={'sunt'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Twitter</button>
-                        <button type="button" className="btn btn-secondary" value={'fac'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Google</button>
-                        <button type="button" className="btn btn-secondary" value={'aut'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Facebook</button>
+                        <button type="button" className="btn btn-secondary" value={'pushpa'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Twitter</button>
+                        <button type="button" className="btn btn-secondary" value={'movies'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Google</button>
+                        <button type="button" className="btn btn-secondary" value={'facebook'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Facebook</button>
                         
                         {/* <ul className="navbar-nav">
                             <li className="nav-item">
