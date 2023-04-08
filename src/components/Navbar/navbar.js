@@ -68,7 +68,7 @@ const Navbar = () => {
                             </ul>
                         </div>
 
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearchTitle(e.target.value);setSearchParams({name:e.target.value})}} />
+                        <input className="searchForm form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setSearchTitle(e.target.value);setSearchParams({name:e.target.value})}} />
                         <button className="btn btn-outline-success" type="submit">Search</button>
 
                         <div className="dropdown">
@@ -110,7 +110,7 @@ const Navbar = () => {
                         </select>
                         {
                             currentUser ? <button type="button" className="btn btn-outline-success" onClick={handleAuth}>Logout</button> :
-                            <button type="button" className="btn btn-outline-success" onClick={handleRoute}>Signup</button>
+                            <button type="button" id="suBtn" className="signUp btn btn-outline-success" onClick={handleRoute}>Signup</button>
                         }
                     </form>
                 </div>
