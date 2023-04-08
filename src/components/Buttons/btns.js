@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {FiExternalLink} from "react-icons/fi"
+import { useDispatch } from 'react-redux';
+import { setSrchTitle } from '../../redux/action';
 
-const btns = () => {
+const Btns = () => {
+    const [btnSearch,setBtnSearch] = useState('');
+    const dispatch = useDispatch();
+
+    const handleClick=(e)=>{
+        setBtnSearch(e.target.value);
+        console.log(e.target.value);
+    }
+    
+    useEffect(()=>{
+        dispatch(setSrchTitle(""));
+        dispatch(setSrchTitle(btnSearch));
+    },[btnSearch])
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-black " style={{background:"black",paddingTop:"15px"}}>
@@ -11,9 +25,9 @@ const btns = () => {
                     </button>
 
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <button type="button" className="btn btn-secondary"><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}}/>Twitter</button>
-                        <button type="button" className="btn btn-secondary"><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}}/>Google</button>
-                        <button type="button" className="btn btn-secondary"><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}}/>Facebook</button>
+                        <button type="button" className="btn btn-secondary" value={'sunt'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Twitter</button>
+                        <button type="button" className="btn btn-secondary" value={'fac'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Google</button>
+                        <button type="button" className="btn btn-secondary" value={'aut'} onClick={handleClick}><FiExternalLink size={30} style={{paddingBottom:"2px",paddingRight:"5px"}} />Facebook</button>
                         
                         {/* <ul className="navbar-nav">
                             <li className="nav-item">
@@ -44,4 +58,4 @@ const btns = () => {
     )
 }
 
-export default btns
+export default Btns
